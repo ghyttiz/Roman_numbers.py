@@ -1,46 +1,46 @@
 #konvertuoja skaicius i romeniskus
-def apskaiciavimas(skaicius,a,b,c,d):
-    if skaicius == 9:
+def calculate(number,a,b,c,d):
+    if number == 9:
         print(a,end='')
-    elif skaicius > 4:
+    elif number > 4:
         print(b, end='')
-        while skaicius > 5:
+        while number > 5:
             print(c, end='')
-            skaicius = skaicius - 1
-    if skaicius == 4:
+            number = number - 1
+    if number == 4:
         print(d, end='')
-    elif skaicius < 4:
-        while skaicius > 0:
+    elif number < 4:
+        while number > 0:
             print(c,end='')
-            skaicius = skaicius - 1
+            number = number - 1
 
 
-skaicius = input("Iveskite skaiciu:")
-ilgis = len(skaicius)
+number = input("Please write number you want to be written in Roman numerals:")
+length = len(number)
 
-if ilgis > 3:
-    numberone = int(skaicius[0])
-    numbertwo = int(skaicius[1])
-    numberthree = int(skaicius[2])
-    numberfour = int(skaicius[3])
+if length > 3:
+    numberone = int(number[0])
+    numbertwo = int(number[1])
+    numberthree = int(number[2])
+    numberfour = int(number[3])
     while numberone > 0:
         print('M',end='')
         numberone = numberone - 1
-    apskaiciavimas(numbertwo,'CM','D','C','CD')
-    apskaiciavimas(numberthree,'XC','L','X','XL')
-    apskaiciavimas(numberfour,'IX','V','I','IV')
-elif ilgis > 2:
-    numberone = int(skaicius[0])
-    numbertwo = int(skaicius[1])
-    numberthree = int(skaicius[2])
-    apskaiciavimas(numberone,'CM','D','C','CD')
-    apskaiciavimas(numbertwo,'XC','L','X','XL')
-    apskaiciavimas(numberthree,'IX','V','I','IV')
-elif ilgis > 1:
-    numberone = int(skaicius[0])
-    numbertwo = int(skaicius[1])
-    apskaiciavimas(numberone,'XC','L','X','XL')
-    apskaiciavimas(numbertwo,'IX','V','I','IV')
-elif ilgis > 0:
-     numberone = int(skaicius[0])
-     apskaiciavimas(numberone,'IX','V','I','IV')  
+    calculate(numbertwo,'CM','D','C','CD')
+    calculate(numberthree,'XC','L','X','XL')
+    calculate(numberfour,'IX','V','I','IV')
+elif length > 2:
+    numberone = int(number[0])
+    numbertwo = int(number[1])
+    numberthree = int(number[2])
+    calculate(numberone,'CM','D','C','CD')
+    calculate(numbertwo,'XC','L','X','XL')
+    calculate(numberthree,'IX','V','I','IV')
+elif length > 1:
+    numberone = int(number[0])
+    numbertwo = int(number[1])
+    calculate(numberone,'XC','L','X','XL')
+    calculate(numbertwo,'IX','V','I','IV')
+elif length > 0:
+     numberone = int(number[0])
+     calculate(numberone,'IX','V','I','IV')  
